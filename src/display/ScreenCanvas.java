@@ -5,12 +5,18 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.util.Iterator;
 
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
 import javax.swing.JPanel;
 
 import game.Main;
 import game.Settings;
 
 public class ScreenCanvas extends JPanel {
+	public ScreenCanvas(){
+	
+	}
+	
 	@Override
 	public void paintComponent(Graphics graphics) {
 		Graphics2D g = (Graphics2D) graphics;

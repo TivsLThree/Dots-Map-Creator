@@ -31,7 +31,7 @@ public class EditMap {
 	}
 
 	public void tick() {
-		System.out.println(Main.mouse.isClear);
+	
 		if (isOutOfThisWorld(Main.mouse.pos)) {
 			return;
 		}

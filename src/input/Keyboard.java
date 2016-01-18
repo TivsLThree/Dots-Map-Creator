@@ -2,9 +2,9 @@ package input;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.IOException;
 
 import game.Main;
-import javafx.scene.input.KeyCode;
 
 public class Keyboard implements KeyListener {
 
@@ -18,6 +18,13 @@ public class Keyboard implements KeyListener {
 		System.out.println(e);
 		if (e.getKeyCode() == KeyEvent.VK_SPACE) {
 			Main.mapEditor.chosenBlock = Main.mapEditor.chosenBlock.next();
+		}else if(e.getKeyCode() == KeyEvent.VK_ENTER){
+			try {
+				Main.wf.saveToFile(Main.world.worldMap);
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		}
 	}
 

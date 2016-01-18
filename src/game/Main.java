@@ -8,6 +8,7 @@ import threads.ThreadManager;
 import update.EditMap;
 import update.GameUpdater;
 import world.World;
+import world.WriteFile;
 
 public class Main {
 	public static Screen screen;
@@ -18,6 +19,7 @@ public class Main {
 	public static Mouse mouse;
 	public static World world;
 	public static EditMap mapEditor;
+	public static WriteFile wf;
 	public static void main(String[] args) {
 		initAll();
 		wakeUp();
@@ -25,7 +27,8 @@ public class Main {
 	}
 
 	private static void initAll() {
-		// Uses default screen size.
+		// Uses default screen size.'
+		wf = new WriteFile();
 		mapEditor = new EditMap();
 		world = new World();
 		keys = new Keyboard();

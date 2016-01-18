@@ -3,7 +3,7 @@ package update;
 import game.Main;
 
 public class GameUpdater {
-	
+
 	public GameUpdater() {
 
 	}
