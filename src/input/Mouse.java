@@ -1,33 +1,44 @@
 package input;
 
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 
-public class Mouse implements MouseListener{
+import javax.swing.SwingUtilities;
+import javax.swing.event.MouseInputAdapter;
+
+import game.Main;
+
+public class Mouse extends MouseInputAdapter {
+	public boolean isClear = false;
+	public boolean isPressed = false;
+	public int[] pos = { 0, 0 };
 
 	@Override
-	public void mouseClicked(MouseEvent e) {
-	System.out.println(e);
+	public void mouseDragged(MouseEvent e) {
+		if(e.getButton() == 3){
+			isClear = true;
+		}
+		isPressed = true;
+		e = SwingUtilities.convertMouseEvent(Main.screen, e, Main.sc);
+		pos[0] = e.getX();
+		pos[1] = e.getY();
 	}
 
 	@Override
 	public void mousePressed(MouseEvent e) {
-	
+		if(e.getButton() == 3){
+			isClear = true;
+		}
+		isPressed = true;
+		e = SwingUtilities.convertMouseEvent(Main.screen, e, Main.sc);
+		pos[0] = e.getX();
+		pos[1] = e.getY();
 	}
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
-		
-	}
+		isClear = false;
+		isPressed = false;
 
-	@Override
-	public void mouseEntered(MouseEvent e) {
-		
-	}
-
-	@Override
-	public void mouseExited(MouseEvent e) {	
-		
 	}
 
 }

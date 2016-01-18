@@ -12,9 +12,9 @@ public class World {
 
 	}
 
-	public static int[][] worldMap = new int[worldSize[0]][worldSize[1]];
+	public int[][] worldMap = new int[worldSize[0]][worldSize[1]];
 
-	public static void genBorders() {
+	public void genBorders() {
 		for (int x = 0; x < worldMap.length; x++) {
 			for (int y = 0; y < worldMap[0].length; y++) {
 				if (x == 0 || y == 0 || x == worldMap.length - 1 || y == worldMap[0].length - 1) {
@@ -25,18 +25,26 @@ public class World {
 			}
 		}
 	}
-	public void draw(Graphics2D g){
+
+	public void draw(Graphics2D g) {
 		for (int i = 0; i < worldMap.length; i++) {
 			for (int k = 0; k < worldMap[0].length; k++) {
 
-				if (worldMap[i][k] == 1) {
+				if (worldMap[i][k] == 2) {
 					g.setColor(new Color(30, 30, 30));
 
 				} else if (worldMap[i][k] == -1) {
 					g.setColor(new Color(100 + (int) (Math.random() * 100), 50 + (int) (Math.random() * 10),
 							50 + (int) (Math.random() * 10)));
+				} else if (worldMap[i][k] == -2) {
+					g.setColor(new Color(20, 30 + (int) (Math.random() * 10), 60 + (int) (Math.random() * 10)));
+				} else if (worldMap[i][k] == 3) {
+					g.setColor(new Color(244 - (int) (Math.random() * 50), 223 - (int) (Math.random() * 50),
+							106 - (int) (Math.random() * 50)));
+				} else if (worldMap[i][k] == 1) {
+					g.setColor(new Color(65, 46, 13));
 				} else {
-					g.setColor(new Color(32,57,39));
+					g.setColor(new Color(32, 57, 39));
 				}
 				g.fillRect(i * scaleFactor[0], k * scaleFactor[1], scaleFactor[0] - 1, scaleFactor[1] - 1);
 

@@ -5,6 +5,7 @@ import display.ScreenCanvas;
 import input.Keyboard;
 import input.Mouse;
 import threads.ThreadManager;
+import update.EditMap;
 import update.GameUpdater;
 import world.World;
 
@@ -16,6 +17,7 @@ public class Main {
 	public static Keyboard keys;
 	public static Mouse mouse;
 	public static World world;
+	public static EditMap mapEditor;
 	public static void main(String[] args) {
 		initAll();
 		wakeUp();
@@ -24,6 +26,7 @@ public class Main {
 
 	private static void initAll() {
 		// Uses default screen size.
+		mapEditor = new EditMap();
 		world = new World();
 		keys = new Keyboard();
 		mouse = new Mouse();

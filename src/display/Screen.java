@@ -20,5 +20,6 @@ public class Screen extends JFrame{
 		this.add(Main.sc);
 		this.addKeyListener(Main.keys);
 		this.addMouseListener(Main.mouse);
+		this.addMouseMotionListener(Main.mouse);
 	}
 }
